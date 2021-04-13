@@ -1,8 +1,10 @@
 package com.example.androidlabs;
 
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -21,27 +23,29 @@ public class ProfileActivity extends AppCompatActivity {
     ImageButton takePicture;
     static final int REQUEST_IMAGE_CAPTURE = 1;
     Button goToChat;
-    private View GoToChat;
 
+
+    @SuppressLint("QueryPermissionsNeeded")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         //get Intent from MainActivity
         Intent loginPage = getIntent();
+        goToChat = (Button)findViewById(R.id.btnGotoChat);
         String emailType = loginPage.getStringExtra("emailType");
         EditText enterEmail = (EditText)findViewById(R.id.typeEmalprofle);
         enterEmail.setText(emailType);
         takePicture = (ImageButton)findViewById(R.id.takePicture);
         takePicture.setOnClickListener(c -> {
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if (null != takePictureIntent.resolveActivity(getPackageManager())) {
+            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             }
         });
 
 
-        goToChat.setOnClickListener(b -> {
+        goToChat.setOnClickListener( b -> {
 
             //Give directions to go from this page, to SecondActivity
             Intent nextPage = new Intent(ProfileActivity.this, ChatRoomActivity.class);
