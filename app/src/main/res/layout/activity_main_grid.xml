@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/grid_layout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:rowCount="4"
+android:columnCount="2">
+
+<TextView
+    android:id="@+id/textView2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/TextView"
+    android:textSize="30dp"
+    android:gravity="fill"
+    android:layout_columnSpan="2"
+    />
+
+<Button
+    android:id="@+id/button3"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_columnWeight="1"
+    android:gravity="fill"
+    android:text="@string/Botton" />
+
+<ImageButton
+    android:id="@+id/imageButton2"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:srcCompat="@drawable/flag"
+    android:layout_columnWeight="1"
+    android:gravity="fill"/>
+
+<CheckBox
+    android:id="@+id/checkBox2"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="@string/checkBoxText"
+    android:layout_columnWeight="1"
+    android:gravity="fill"/>
+
+<Switch
+    android:id="@+id/switch2"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="@string/Switch"
+    android:layout_columnWeight="1"
+    android:gravity="fill"/>
+
+<EditText
+    android:id="@+id/editText3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_columnSpan="2"
+    android:ems="10"
+    android:gravity="fill"
+    android:inputType="textPersonName"
+    android:hint="@string/HintText"
+    />
+</GridLayout>
