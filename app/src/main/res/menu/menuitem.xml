@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/choice1"
+        android:orderInCategory="100"
+        android:title="setting"
+        android:icon="@android:drawable/star_on"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/choice2"
+        android:orderInCategory="200"
+        android:title="Search"
+        android:icon="@android:drawable/stat_notify_chat"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/choice3"
+        android:orderInCategory="300"
+        android:title="Refresh"
+        android:icon="@android:drawable/stat_notify_more"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/MenuItemsOverflow"
+        app:showAsAction="never"
+        android:title="@string/overflow"/>
+
+
+</menu>

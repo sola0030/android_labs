@@ -1,21 +1,18 @@
 package com.example.androidlabs;
 
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -23,6 +20,7 @@ public class ProfileActivity extends AppCompatActivity {
     ImageButton takePicture;
     static final int REQUEST_IMAGE_CAPTURE = 1;
     Button goToChat;
+    Button toolbarPage;
 
 
     @SuppressLint("QueryPermissionsNeeded")
@@ -32,11 +30,11 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         //get Intent from MainActivity
         Intent loginPage = getIntent();
-        goToChat = (Button)findViewById(R.id.btnGotoChat);
+        goToChat = findViewById(R.id.btnGotoChat);
         String emailType = loginPage.getStringExtra("emailType");
-        EditText enterEmail = (EditText)findViewById(R.id.typeEmalprofle);
+        EditText enterEmail = findViewById(R.id.typeEmalprofle);
         enterEmail.setText(emailType);
-        takePicture = (ImageButton)findViewById(R.id.takePicture);
+        takePicture = findViewById(R.id.takePicture);
         takePicture.setOnClickListener(c -> {
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
@@ -53,6 +51,11 @@ public class ProfileActivity extends AppCompatActivity {
             startActivityForResult(nextPage, 345);
         });
         Log.e(ACTIVITY_NAME, "In function: onCreate"  /* replace with function name */);
+        toolbarPage = findViewById(R.id.btnGotoToolbar);
+        toolbarPage.setOnClickListener(c-> {
+            Intent toolbarPage = new Intent(ProfileActivity.this, TestToolbar.class);
+            startActivityForResult(toolbarPage, 345);
+        });
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

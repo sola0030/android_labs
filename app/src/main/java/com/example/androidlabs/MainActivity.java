@@ -1,13 +1,15 @@
 package com.example.androidlabs;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import static com.example.androidlabs.R.id.loginButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
 
-        Button nextButton = (Button)findViewById(R.id.loginButton);
+        Button nextButton = (Button)findViewById(loginButton);
         emailField = (EditText)findViewById(R.id.typeEmail);
         share = getSharedPreferences("FileName", Context.MODE_PRIVATE);
         String saveEmail = share.getString("ReserveName", "Default value");

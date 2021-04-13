@@ -19,8 +19,10 @@
     <string name="picture" translatable="false">Your picture:</string>
     <string name="textBotton" translatable="false">Click the button above to take a picture</string>
     <string name="sharedEmail" translatable="false"></string>
-    <string name="btnReceive">string</string>
-    <string name="editText">string</string>
-    <string name="btnSend">string</string>
-    <string name="btnGotoChat">string</string>
+    <string name="btnReceive" translatable="false">string</string>
+    <string name="editText" translatable="false">string</string>
+    <string name="btnSend" translatable="false">string</string>
+    <string name="btnGotoChat" translatable="false">string</string>
+    <string name="overflow">overflow</string>
+
 </resources>
