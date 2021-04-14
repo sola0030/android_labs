@@ -1,7 +1,5 @@
 package com.example.androidlabs;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -9,7 +7,6 @@ import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.os.Bundle;
 import android.util.Log;
 
 
@@ -75,6 +72,14 @@ import android.util.Log;
             Cursor cursor = db.rawQuery(query, null);
             printCursor(cursor);
             return cursor;
+        }
+        public int deleteEntry(int id)
+        {
+            SQLiteDatabase db = this.getWritableDatabase();
+
+            String where="_id=?";
+            int numberOFEntriesDeleted= db.delete(DATABASE_TABLE, where, new String[]{Integer.toString(id)});
+            return numberOFEntriesDeleted;
         }
 
         public void printCursor(Cursor cursor) {
